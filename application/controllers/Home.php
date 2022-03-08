@@ -9,7 +9,7 @@ class Home extends CI_Controller{
 		$this->load->model('m_files');
 		$this->load->model('m_pengunjung');
 		$this->m_pengunjung->count_visitor();
-	}
+	} 
 	function index(){
 			$x['berita']=$this->m_tulisan->get_berita_home();
 			$x['pengumuman']=$this->m_pengumuman->get_pengumuman_home();

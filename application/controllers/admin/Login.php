@@ -44,6 +44,12 @@ class Login extends CI_Controller{
                 $this->session->set_userdata('akses','2');
                 $idadmin=$xcadmin['pengguna_id'];
                 $user_nama=$xcadmin['pengguna_nama'];
+                $user_moto=$xcadmin['pengguna_moto'];
+                $user_email=$xcadmin['pengguna_email'];
+                $user_hp=$xcadmin['pengguna_nohp'];
+                $this->session->set_userdata('hp',$user_hp);
+                $this->session->set_userdata('email',$user_email);
+                $this->session->set_userdata('moto',$user_moto);
                 $this->session->set_userdata('idadmin',$idadmin);
                 $this->session->set_userdata('nama',$user_nama);
                 redirect('admin/dashboard');
@@ -58,7 +64,7 @@ class Login extends CI_Controller{
          redirect('admin/login');
        }
 
-    }
+    } 
 
     public function registration(){
         $this->load->library('form_validation');
@@ -206,7 +212,7 @@ class Login extends CI_Controller{
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_user' => 'panaktoba@gmail.com',
-            'smtp_pass' => 'Parsamosir11@',
+            'smtp_pass' => 'Parsamosir18@',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',

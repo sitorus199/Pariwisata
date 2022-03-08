@@ -67,7 +67,7 @@
                                     <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
+                                    <a class="nav-link" href="<?php echo site_url('paketwisata');?>">Paket Wisata</a>
                                 </li>
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
@@ -76,23 +76,23 @@
                                     <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
                                 </li> -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Blog</a>
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Event</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
                                 </li>
-                                <li class="nav-item">
+                               <!--  <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('agenda');?>">Event</a>
-                                </li>
+                                </li> -->
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
                                 </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('contact');?>">Contact</a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a href="<?php echo base_url().'administrator'?>" class="nav-link">Login</a>
                                 </li>
@@ -164,7 +164,7 @@
     </section>
     <!--//END TESTIMONIAL -->
     <!--============================= DETAILED CHART =============================-->
-    <div class="detailed_chart">
+    <!-- <div class="detailed_chart">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom">
@@ -204,7 +204,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--//END DETAILED CHART -->
 
         <!--============================= FOOTER =============================-->
@@ -214,9 +214,9 @@
                     <div class="col-md-3">
                         <div class="foot-logo">
                             <a href="<?php echo site_url();?>">
-                                <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
+                                <img src="<?php echo base_url().'theme/images/logoAnakTao2.png'?>" class="img-fluid" alt="footer_logo">
                             </a>
-                            <p><?php echo date('Y');?> © copyright by <a href="http://mfikri.com" target="_blank">M Fikri</a>. <br>All rights reserved.</p>
+                            <p><?php echo date('Y');?> © copyright by <a href="https://destinasi-toba.000webhostapp.com/" target="_blank">Anak Tao</a>. <br>All rights reserved.</p>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -233,10 +233,9 @@
                         </div>
                         <div class="col-md-3">
                           <div class="sitemap">
-                              <h3>Akademik</h3>
+                              <h3>Penting</h3>
                               <ul>
-                                  <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
-                                  <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
+                                  
                                   <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                                   <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
                                   <li><a href="<?php echo site_url('download');?>">Download</a></li>
@@ -247,8 +246,8 @@
                             <div class="address">
                                 <h3>Hubungi Kami</h3>
                                 <p><span>Alamat: </span> Padang, Sumatera Barat, INA. 11001</p>
-                                <p>Email : info@mschool.com
-                                    <br> Phone : +91 555 668 986</p>
+                                <p>Email : panaktoba@gmail.com
+                                    <br> Phone : - </p>
                                     <ul class="footer-social-icons">
                                         <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>

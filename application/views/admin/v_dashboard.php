@@ -1,10 +1,13 @@
 <!--Counter Inbox-->
 <?php
-    error_reporting(0);
     $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
     $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
+    $query3=$this->db->query("SELECT * FROM tbl_order WHERE status <> 'LUNAS'");
+    $query4=$this->db->query("SELECT * FROM tbl_pembayaran");
     $jum_comment=$query2->num_rows();
     $jum_pesan=$query->num_rows();
+    $jum_order=$query3->num_rows();
+    $jum_konfirmasi=$query4->num_rows();
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,8 +76,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-list"></i> List Berita</a></li>
-            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><i class="fa fa-thumb-tack"></i> Post Berita</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-list"></i> List Event</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><i class="fa fa-thumb-tack"></i> Post Event</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>
         </li>
@@ -86,15 +89,63 @@
             </span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="<?php echo base_url().'admin/agenda'?>">
             <i class="fa fa-calendar"></i> <span>Agenda</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
           </a>
+        </li> -->
+        <li class="">
+          <a href="<?php echo base_url().'admin/souvenir'?>">
+            <i class="fa fa-shopping-bag"></i> <span>Souvenir</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
         </li>
-        <li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/kuliner'?>">
+            <i class="fa fa-cutlery"></i> <span>Kuliner</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/paketwisata'?>">
+            <i class="fa fa-gift"></i> <span>Paket Wisata</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/destinasi'?>">
+            <i class="fa fa-map-signs"></i> <span>Destinasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/transportasi'?>">
+            <i class="fa fa-bus"></i> <span>Transportasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/akomodasi'?>">
+            <i class="fa fa-building"></i> <span>Akomodasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
             <span class="pull-right-container">
@@ -102,60 +153,41 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>Download</span>
+        
+        <li class="">
+          <a href="<?php echo base_url().'admin/galeri'?>">
+            <i class="fa fa-camera"></i> <span>Galery</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-camera"></i>
-            <span>Gallery</span>
+        
+        <li class="">
+          <a href="<?php echo base_url().'admin/orders'?>">
+            <i class="fa fa-bell"></i> <span>Orders</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-red"><?php echo $jum_order;?></small>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/album'?>"><i class="fa fa-clone"></i> Album</a></li>
-            <li><a href="<?php echo base_url().'admin/galeri'?>"><i class="fa fa-picture-o"></i> Photos</a></li>
-          </ul>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/konfirmasi'?>">
+            <i class="fa fa-money"></i> <span>Konfirmasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php echo $jum_konfirmasi;?></small>
+            </span>
+          </a>
         </li>
 
         <!-- <li>
-          <a href="<?php echo base_url().'admin/guru'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
-            <span class="pull-right-container">
-              <small class="label pull-right"></small>
-            </span>
-          </a>
-        </li> -->
-
-        <!-- <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i>
-            <span>Kesiswaan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
-            <li><a href="#"><i class="fa fa-star-o"></i> Prestasi Siswa</a></li>
-
-          </ul>
-        </li> -->
-
-        <li>
           <a href="<?php echo base_url().'admin/inbox'?>">
             <i class="fa fa-envelope"></i> <span>Inbox</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"><?php echo $jum_pesan;?></small>
             </span>
           </a>
-        </li>
+        </li> -->
 
         <li>
           <a href="<?php echo base_url().'admin/komentar'?>">
@@ -203,11 +235,11 @@
           <div class="info-box">
             <span class="info-box-icon bg-aqua"><i class="fa fa-chrome"></i></span>
               <?php
-                  $query=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_perangkat='Chrome'");
+                  $query=$this->db->query("SELECT * FROM tbl_destinasi");
                   $jml=$query->num_rows();
               ?>
             <div class="info-box-content">
-              <span class="info-box-text">Chrome</span>
+              <span class="info-box-text">Destinasi</span>
               <span class="info-box-number"><?php echo $jml;?></span>
             </div>
             <!-- /.info-box-content -->
@@ -219,11 +251,11 @@
           <div class="info-box">
             <span class="info-box-icon bg-red"><i class="fa fa-firefox"></i></span>
             <?php
-                  $query=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_perangkat='Firefox' OR pengunjung_perangkat='Mozilla'");
+                  $query=$this->db->query("SELECT * FROM tbl_akomodasi");
                   $jml=$query->num_rows();
             ?>
             <div class="info-box-content">
-              <span class="info-box-text">Mozilla Firefox</span>
+              <span class="info-box-text">Akomodasi</span>
               <span class="info-box-number"><?php echo $jml;?></span>
             </div>
             <!-- /.info-box-content -->
@@ -239,11 +271,11 @@
           <div class="info-box">
             <span class="info-box-icon bg-green"><i class="fa fa-bug"></i></span>
               <?php
-                    $query=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_perangkat='Googlebot'");
+                    $query=$this->db->query("SELECT * FROM tbl_transportasi");
                     $jml=$query->num_rows();
               ?>
             <div class="info-box-content">
-              <span class="info-box-text">Googlebot</span>
+              <span class="info-box-text">Transportasi</span>
               <span class="info-box-number"><?php echo $jml;?></span>
             </div>
             <!-- /.info-box-content -->
@@ -255,11 +287,11 @@
           <div class="info-box">
             <span class="info-box-icon bg-yellow"><i class="fa fa-opera"></i></span>
             <?php
-                    $query=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_perangkat='Opera'");
+                    $query=$this->db->query("SELECT * FROM tbl_pengunjung WHERE DATE_FORMAT(pengunjung_tanggal,'%m%y')=DATE_FORMAT(CURDATE(),'%m%y')");
                     $jml=$query->num_rows();
               ?>
             <div class="info-box-content">
-              <span class="info-box-text">Opera</span>
+              <span class="info-box-text">Total Pengunjung</span>
               <span class="info-box-number"><?php echo $jml;?></span>
             </div>
             <!-- /.info-box-content -->
@@ -464,7 +496,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url().'assets/dist/js/demo.js'?>"></script>
 
-<script>
+<script> 
 
             var lineChartData = {
                 labels : <?php echo json_encode($bulan);?>,
