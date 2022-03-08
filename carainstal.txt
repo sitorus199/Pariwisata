@@ -1,0 +1,8 @@
+1. Instal XAMPP sebagai web server
+2. Download Project dan extrack di dalam folder htdocs
+3. Nyalakan Apache dan MySQL dari XAMPP
+4. lakukan migrasi database dengan membuat database baru (penamaan bebas) pada webserver atau pada localhost dan import database yang telah disediakan.
+5. lakukan konfigurasi pada file database.php yang berada pada folder application/config dan ganti nama database sesuai database yang telah dibuat sebelumnya.
+6. lalu akses webserver pada crome atau firefox dengan mengetikkan http://localhost/(nama aplikasinya) Misal : http://localhost/web_pariwisata
+7. aplikasi telah terinstal dan dapat melakukan login dan registrasi akun.
+8. jika ingin mengganti atau menambah superadmin dapat dengan melakukan registrasi terlebih dahulu kemudian superadmin yang pertama mengubah hak akses akunyang didaftarkan memjadi supeadmin pada aplikasi atau dapat dilakukan secara manual dengan mengubah pengguna_level pada tabel tbl_pengguna menjadi 1 (Level Super Admin).
