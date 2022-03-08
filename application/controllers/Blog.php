@@ -47,6 +47,7 @@ class Blog extends CI_Controller{
 	}
 	function detail($slugs){
 		$slug=htmlspecialchars($slugs,ENT_QUOTES);
+		
 		$query = $this->db->get_where('tbl_tulisan', array('tulisan_slug' => $slug));
 		if($query->num_rows() > 0){
 			$b=$query->row_array();
@@ -65,7 +66,7 @@ class Blog extends CI_Controller{
 			$x['show_komentar']=$this->m_tulisan->show_komentar_by_tulisan_id($kode);
 			$x['category']=$this->db->get('tbl_kategori');
 			$x['populer']=$this->db->query("SELECT * FROM tbl_tulisan ORDER BY tulisan_views DESC LIMIT 5");
-			$this->load->view('depan/v_blog_detail',$x);
+			$this->load->view('customers/v_blog_detail',$x);
 		}else{
 			redirect('artikel');
 		}
@@ -92,7 +93,7 @@ class Blog extends CI_Controller{
 					$x['data']=$query;
 					$x['category']=$this->db->get('tbl_kategori');
   				$x['populer']=$this->db->query("SELECT * FROM tbl_tulisan ORDER BY tulisan_views DESC LIMIT 5");
-          $this->load->view('depan/v_blog',$x);
+          $this->load->view('customers/v_blog',$x);
 	 		 }else{
 				 echo $this->session->set_flashdata('msg','<div class="alert alert-danger">Tidak dapat menemukan artikel dengan kata kunci <b>'.$keyword.'</b></div>');
 				 redirect('artikel');

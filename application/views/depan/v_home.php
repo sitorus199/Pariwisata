@@ -73,7 +73,16 @@
                                     <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
+                                    <a class="nav-link" href="<?php echo site_url('paketwisata');?>">Paket_Wisata</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('destinasi');?>">Destinasi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('acomodasi');?>">Akomodasi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('transportasi');?>">Transportasi</a>
                                 </li>
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
@@ -82,25 +91,25 @@
                                     <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
                                 </li> -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Blog</a>
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Event</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('agenda');?>">Event</a>
-                                </li>
+                                </li> -->
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
                                 </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('contact');?>">Contact</a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url().'administrator'?>" class="nav-link"><span class="icon-user"></span> Login</a>
+                                    <a href="<?php echo base_url().'administrator'?>" class="nav-link"><span class="icon-ser"></span> Login</a>
                                 </li>
                                 <!-- <li class="user-footer">
                                     <div class="pull-right">
@@ -143,7 +152,7 @@
                             <h1>Tempat Wisata Menarik</h1>
                             <h4>Jelajahi Danau Toba Kepingan Surga di Pulau Samosir.<br> Yang Akan Kami Pandu <br>Untuk Pengalaman Wisata Terbaik Anda.</h4>
                             <div class="slider-btn">
-                                <a href="<?php echo site_url('guru');?>" class="btn btn-default">Learn more</a>
+                                <a href="<?php echo site_url('paketwisata');?>" class="btn btn-default">Learn more</a>
                             </div>
                         </div>
                     </div>
@@ -172,6 +181,54 @@
         </div>
     </div>
 </section>
+
+
+<section class="event">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Pengumuman</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="event-img2">
+                <?php foreach ($pengumuman->result() as $row) :?>
+                <div class="row">
+                    <div class="col-sm-3"> <img src="<?php echo base_url().'theme/images/announcement-icon.png'?>" class="img-fluid" alt="event-img"></div><!-- // end .col-sm-3 -->
+                    <div class="col-sm-9"> <h3><a href="<?php echo site_url('pengumuman');?>"><?php echo $row->pengumuman_judul;?></a></h3>
+                      <span><?php echo $row->tanggal;?></span>
+                      <p><?php echo limit_words($row->pengumuman_deskripsi,10).'...';?></p>
+
+                    </div><!-- // end .col-sm-7 -->
+                </div><!-- // end .row -->
+                <?php endforeach;?>
+                </div>
+            </div>
+            <!-- <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-12">
+                      <?php foreach ($agenda->result() as $row):?>
+                        <div class="event_date">
+                            <div class="event-date-wrap">
+                                <p><?php echo date("d", strtotime($row->agenda_tanggal));?></p>
+                                <span><?php echo date("M. y", strtotime($row->agenda_tanggal));?></span>
+                            </div>
+                        </div>
+                        <div class="date-description">
+                            <h3><a href="<?php echo site_url('agenda');?>"><?php echo $row->agenda_nama;?></a></h3>
+                            <p><?php echo limit_words($row->agenda_deskripsi,10).'...';?></p>
+                            <hr class="event_line">
+                        </div>
+                        <?php endforeach;?>
+
+                    </div>
+                </div>
+
+            </div> -->
+        </div>
+    </div>
+</section>
 <!--//END HEADER -->
 <!--============================= ABOUT =============================-->
 <!-- <section class="clearfix about about-style2">
@@ -192,7 +249,7 @@
     </div>
 </section> -->
 
-<section class="welcome_about">
+<!-- <section class="welcome_about">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -214,7 +271,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 <!--//END ABOUT -->
 <!--============================= OUR COURSES =============================-->
 <section class="our_courses">
@@ -248,50 +305,10 @@
 </section>
 <!--//END OUR COURSES -->
 <!--============================= EVENTS =============================-->
-<section class="event">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="event-img2">
-                <?php foreach ($pengumuman->result() as $row) :?>
-                <div class="row">
-                    <div class="col-sm-3"> <img src="<?php echo base_url().'theme/images/announcement-icon.png'?>" class="img-fluid" alt="event-img"></div><!-- // end .col-sm-3 -->
-                    <div class="col-sm-9"> <h3><a href="<?php echo site_url('pengumuman');?>"><?php echo $row->pengumuman_judul;?></a></h3>
-                      <span><?php echo $row->tanggal;?></span>
-                      <p><?php echo limit_words($row->pengumuman_deskripsi,10).'...';?></p>
 
-                    </div><!-- // end .col-sm-7 -->
-                </div><!-- // end .row -->
-                <?php endforeach;?>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-md-12">
-                      <?php foreach ($agenda->result() as $row):?>
-                        <div class="event_date">
-                            <div class="event-date-wrap">
-                                <p><?php echo date("d", strtotime($row->agenda_tanggal));?></p>
-                                <span><?php echo date("M. y", strtotime($row->agenda_tanggal));?></span>
-                            </div>
-                        </div>
-                        <div class="date-description">
-                            <h3><a href="<?php echo site_url('agenda');?>"><?php echo $row->agenda_nama;?></a></h3>
-                            <p><?php echo limit_words($row->agenda_deskripsi,10).'...';?></p>
-                            <hr class="event_line">
-                        </div>
-                        <?php endforeach;?>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
 <!--//END EVENTS -->
 <!--============================= DETAILED CHART =============================-->
-<div class="detailed_chart">
+<!-- <div class="detailed_chart">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom">
@@ -331,7 +348,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!--//END DETAILED CHART -->
 <!--============================= FOOTER =============================-->
 <footer>

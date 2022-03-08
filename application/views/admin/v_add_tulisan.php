@@ -2,8 +2,12 @@
 <?php
     $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
     $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
+    $query3=$this->db->query("SELECT * FROM tbl_order WHERE status <> 'LUNAS'");
+    $query4=$this->db->query("SELECT * FROM tbl_pembayaran");
     $jum_comment=$query2->num_rows();
     $jum_pesan=$query->num_rows();
+    $jum_order=$query3->num_rows();
+    $jum_konfirmasi=$query4->num_rows();
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,8 +75,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-list"></i> List Berita</a></li>
-            <li class="active"><a href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><i class="fa fa-thumb-tack"></i> Post Berita</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisan'?>"><i class="fa fa-list"></i> List Event</a></li>
+            <li class="active"><a href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><i class="fa fa-thumb-tack"></i> Post Event</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>
         </li>
@@ -84,15 +88,63 @@
             </span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="<?php echo base_url().'admin/agenda'?>">
             <i class="fa fa-calendar"></i> <span>Agenda</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
           </a>
+        </li> -->
+        <li class="">
+          <a href="<?php echo base_url().'admin/souvenir'?>">
+            <i class="fa fa-shopping-bag"></i> <span>Souvenir</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
         </li>
-        <li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/kuliner'?>">
+            <i class="fa fa-cutlery"></i> <span>Kuliner</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/paketwisata'?>">
+            <i class="fa fa-gift"></i> <span>Paket Wisata</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/destinasi'?>">
+            <i class="fa fa-map-signs"></i> <span>Destinasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/transportasi'?>">
+            <i class="fa fa-bus"></i> <span>Transportasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/akomodasi'?>">
+            <i class="fa fa-building"></i> <span>Akomodasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li >
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
             <span class="pull-right-container">
@@ -100,60 +152,42 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>Download</span>
+        
+        <li class="">
+          <a href="<?php echo base_url().'admin/galeri'?>">
+            <i class="fa fa-camera"></i> <span>Galery</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-camera"></i>
-            <span>Gallery</span>
+
+        
+        <li class="">
+          <a href="<?php echo base_url().'admin/orders'?>">
+            <i class="fa fa-bell"></i> <span>Orders</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-red"><?php echo $jum_order;?></small>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/album'?>"><i class="fa fa-clone"></i> Album</a></li>
-            <li><a href="<?php echo base_url().'admin/galeri'?>"><i class="fa fa-picture-o"></i> Photos</a></li>
-          </ul>
+        </li>
+        <li class="">
+          <a href="<?php echo base_url().'admin/konfirmasi'?>">
+            <i class="fa fa-money"></i> <span>Konfirmasi</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php echo $jum_konfirmasi;?></small>
+            </span>
+          </a>
         </li>
 
         <!-- <li>
-          <a href="<?php echo base_url().'admin/guru'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
-            <span class="pull-right-container">
-              <small class="label pull-right"></small>
-            </span>
-          </a>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i>
-            <span>Kesiswaan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
-            <li><a href="#"><i class="fa fa-star-o"></i> Prestasi Siswa</a></li>
-
-          </ul>
-        </li> -->
-
-        <li>
           <a href="<?php echo base_url().'admin/inbox'?>">
             <i class="fa fa-envelope"></i> <span>Inbox</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"><?php echo $jum_pesan;?></small>
             </span>
           </a>
-        </li>
+        </li> -->
 
         <li>
           <a href="<?php echo base_url().'admin/komentar'?>">
@@ -184,13 +218,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Berita
+        Post Event
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Berita</a></li>
-        <li class="active">Add Berita</li>
+        <li><a href="#">Event</a></li>
+        <li class="active">Add Event</li>
       </ol>
     </section>
 
@@ -200,7 +234,7 @@
       <!-- SELECT2 EXAMPLE -->
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title">Post Berita</h3>
+          <h3 class="box-title">Post Event</h3>
         </div>
 
 		<form action="<?php echo base_url().'admin/tulisan/simpan_tulisan'?>" method="post" enctype="multipart/form-data">
@@ -209,7 +243,7 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-10">
-              <input type="text" name="xjudul" class="form-control" placeholder="Judul berita atau artikel" required/>
+              <input type="text" name="xjudul" class="form-control" placeholder="Judul Event atau artikel" required/>
             </div>
             <!-- /.col -->
             <div class="col-md-2">
@@ -232,7 +266,7 @@
 
           <div class="box box-danger">
             <div class="box-header">
-              <h3 class="box-title">Berita</h3>
+              <h3 class="box-title">Event</h3>
             </div>
             <div class="box-body">
 

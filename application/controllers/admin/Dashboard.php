@@ -14,8 +14,8 @@ class Dashboard extends CI_Controller{
 			$this->load->view('admin/v_dashboard',$x);
 		}else{
 
-			$this->load->view('customers/v_dashboard');
-			//redirect('administrator');
+			// $this->load->view('customers/v_dashboard');
+			redirect('customers/home');
 		}
 	
 	}

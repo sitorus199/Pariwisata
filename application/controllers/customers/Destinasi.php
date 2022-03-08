@@ -6,12 +6,44 @@ class Destinasi extends CI_Controller{
             $url=base_url('administrator');
             redirect($url);
         };
+
+        $this->load->model('m_destinasi'); 
+		$this->load->library('upload');
 	}
 	function index(){
-
-			$this->load->view('customers/v_destinasi');
-			//redirect('administrator');
+		$x['brt']=$this->m_destinasi->tampil_destinasi();
+		$this->load->view('customers/v_destinasi',$x);
+		//redirect('administrator');
 	
 	}
-	
+	public function detail_destinasi(){
+		$id=$this->input->post('xid');
+		$kode=$this->uri->segment(4);
+		$x['brt']=$this->m_destinasi->tampil_destinasi_id($kode);
+		$this->load->view('customers/v_detail_destinasi',$x);
+		
+	}
+
+	public function simpan_pemesanan(){
+		$id=strip_tags($this->input->post('xid'));
+		
+		$nama=strip_tags($this->input->post('xnama'));
+		$tanggal=strip_tags($this->input->post('xtanggal'));
+		$metode=1;
+		$status='BELUM LUNAS';
+		$alamat=strip_tags($this->input->post('xalamat'));
+		$email=strip_tags($this->input->post('xemail'));
+		$notelp=strip_tags($this->input->post('xnotelp'));
+		$mulai=strip_tags($this->input->post('xmulai'));
+		$akhir=strip_tags($this->input->post('xakhir'));
+		$jumlah=strip_tags($this->input->post('xjumlah'));
+		$keterangan=$this->input->post('xketerangan');
+
+		$stock=strip_tags($this->input->post('xstock'));
+		$jlhstock = $stock - $jumlah;
+		$this->m_destinasi->update_stock($jlhstock,$id);
+		$this->m_destinasi->simpan_pemesanan($id,$nama,$alamat,$email,$notelp,$mulai,$akhir,$metode,$jumlah,$tanggal,$keterangan,$status);
+		echo $this->session->set_flashdata('msg','success');
+		redirect('customers/destinasi');
+	}
 }
