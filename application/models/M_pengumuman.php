@@ -1,6 +1,6 @@
 <?php
 class M_pengumuman extends CI_Model{
-
+ 
 	function get_all_pengumuman(){
 		$hsl=$this->db->query("SELECT pengumuman_id,pengumuman_judul,pengumuman_deskripsi,DATE_FORMAT(pengumuman_tanggal,'%d/%m/%Y') AS tanggal,pengumuman_author FROM tbl_pengumuman ORDER BY pengumuman_id DESC");
 		return $hsl;

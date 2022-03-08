@@ -67,8 +67,8 @@
                                   <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
-                              </li>
+                                    <a class="nav-link" href="<?php echo site_url('paketwisata');?>">Paket Wisata</a>
+                                </li>
                              <!--  <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
                               </li>
@@ -76,14 +76,14 @@
                                   <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
                               </li> -->
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Blog</a>
+                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Event</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
                               </li>
-                              <li class="nav-item">
+                              <!-- <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('agenda');?>">Event</a>
-                              </li>
+                              </li> -->
                               <!-- <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
                               </li> -->
@@ -157,7 +157,7 @@
                 <div class="col-md-3">
                     <div class="foot-logo">
                         <a href="<?php echo site_url();?>">
-                            <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
+                            <img src="<?php echo base_url().'theme/images/logoAnakTao2.png'?>" class="img-fluid" alt="footer_logo">
                         </a>
                         <p><?php echo date('Y');?> © copyright by <a href="http://mfikri.com" target="_blank">M Fikri</a>. <br>All rights reserved.</p>
                         </div>

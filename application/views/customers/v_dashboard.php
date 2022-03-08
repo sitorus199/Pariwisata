@@ -13,7 +13,7 @@
 
 	<a class="nav-link" href="<?php echo site_url('about');?>">About</a><br>
 	
-	<a href="<?php echo base_url().'customers/dashboard2'?>">Contoh dashboard</a><br>
+	<a href="<?php echo base_url().'customers/destinasi'?>">Destinasi</a><br>
 
 	<a href="<?php echo base_url().'admin/login/logout'?>" class="btn btn-default btn-flat">Sign out</a>
 </body>

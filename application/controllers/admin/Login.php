@@ -58,7 +58,7 @@ class Login extends CI_Controller{
          redirect('admin/login');
        }
 
-    }
+    } 
 
     public function registration(){
         $this->load->library('form_validation');
@@ -206,7 +206,7 @@ class Login extends CI_Controller{
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_user' => 'panaktoba@gmail.com',
-            'smtp_pass' => 'Parsamosir11@',
+            'smtp_pass' => 'Parsamosir18@',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
